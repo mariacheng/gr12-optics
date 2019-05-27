@@ -37,7 +37,7 @@ public class Opticsanimation extends JPanel{
   public Point poi1;
   public Point poi2;
   BufferedImage index = null;
-  
+
   //Methods
   public void paintComponent(Graphics g){
     super.paintComponent(g);
@@ -57,7 +57,7 @@ public class Opticsanimation extends JPanel{
     int1x2 = darrowdimensions(int1x2, 5, intDistance);
     g2d.drawString("height", 580, 35);
     g2d.drawString("distance", 575, 135);
-    
+
     //Converging Mirror
     g2d.drawString("Converging Mirror", 165, 40);
     g2d.drawLine(50, 125, 400, 125);
@@ -94,7 +94,7 @@ public class Opticsanimation extends JPanel{
 //    int3y = harrowdimensions(int3y, 325, 0, intHeight);
 //    int2y = harrowdimensions(int3y, 325, 5, intHeight);
 //    drawArrow(int1x1, int1x2, int2y, int3x, int3y, 325, g2d);
-    
+
     //Converging Lens
     g2d.drawString("Converging Lens", 165, 440);
     g2d.drawLine(50, 525, 400, 525);
@@ -127,7 +127,7 @@ public class Opticsanimation extends JPanel{
     g2d.drawLine(165, 120, 165, 130);
 //    g2d.drawLine(165, 320, 165, 330);
     g2d.drawLine(165, 520, 165, 530);
-    
+
     //Virtual Focal Point
     g2d.drawLine(260, 120, 260, 130);
 //    g2d.drawLine(260, 320, 260, 330);
@@ -278,7 +278,7 @@ public class Opticsanimation extends JPanel{
     line1 = new Line2D.Double(int3x, int3y, 210, int3y);
     line2 = new Line2D.Double(210, int3y, 165, 125);
     Line2D.Double extendline = new Line2D.Double(210, int3y, 165, 125);
-    
+
     if(intHeight == 1){
       line1.setLine(int3x, int3y, 215, 125);
       g2d.draw(line1);
@@ -413,7 +413,7 @@ public class Opticsanimation extends JPanel{
     line3 = new Line2D.Double(int3x, int3y, 212, int3y);
     line4 = new Line2D.Double(212, int3y, 260, 525);
     Line2D.Double extendline = new Line2D.Double(212, int3y, 260, 525);
-    
+
     if(intHeight>0){
       g2d.draw(line3);
       dblslope = slope(line4);
@@ -427,7 +427,7 @@ public class Opticsanimation extends JPanel{
           g2d.setColor(Color.GREEN);
         }
       }
-      g2d.draw(line4); 
+      g2d.draw(line4);
     }
     g2d.setColor(Color.BLACK);
     return line4;
@@ -437,7 +437,7 @@ public class Opticsanimation extends JPanel{
     double dblslope;
     line5 = new Line2D.Double(int3x, int3y, 212, 525);
     Line2D.Double extendline = new Line2D.Double(int3x, int3y, 212, 525);
-    
+
     if(intHeight>0){
       dblslope = slope(line5);
       line5.setLine(int3x, int3y, 212 + 150, 525 + (dblslope*150));
